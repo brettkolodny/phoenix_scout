@@ -1,0 +1,17 @@
+{
+  "name": "front-end",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build:elm": "node ./build.js",
+    "build:css": "tailwindcss -i ./src/index.css -o ./dist/index.css --minify",
+    "build": "NODE_ENV=production npm-run-all build:*",
+    "watch:esbuild": "node ./build.js --watch",
+    "dev": "npm-run-all --parallel watch:*"
+  },
+  "devDependencies": {
+    "esbuild": "^0.16.12",
+    "esbuild-plugin-elm": "^0.0.12"
+  }
+}
